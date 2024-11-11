@@ -2,26 +2,103 @@
   Scrivi una funzione per concatenare due stringhe ricevute come parametri, selezionando solamente i primi 2 caratteri della
   prima e gli ultimi 3 della seconda. Converti la stringa risultante in maiuscolo e mostrala con un console.log().
 */
+console.log('ESERCIZIO 1');
+
+function extract(str1, str2) {
+  let myStr = ''.concat(str1.slice(0, 2), str2.slice(-3));
+  myStr = myStr.toUpperCase();
+  return console.log(myStr);
+}
+
+let string1 = 'Pippo';
+let string2 = 'Pluto';
+
+extract(string1, string2);
+
+console.log('______________________________');
 
 /* ESERCIZIO 2 (for)
   Scrivi una funzione che torni un array di 10 elementi; ognuno di essi deve essere un valore random compreso tra 0 e 100 (incluso).
 */
+console.log('ESERCIZIO 2');
+
+function getRandomNumbers(n) {
+  const myArr = [];
+  for (let i = 0; i < n; i++) {
+    myArr.push(Math.floor(Math.random() * 101));
+  }
+  return myArr;
+}
+
+let numbersRequired = 10;
+
+console.log(getRandomNumbers(numbersRequired));
+
+console.log('______________________________');
 
 /* ESERCIZIO 3 (filter)
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
 */
+console.log('ESERCIZIO 3');
+
+function getEvenNumbers(arr) {
+  const myArr = arr.filter((element) => element % 2 === 0);
+  return myArr;
+}
+
+console.log('Starter array:');
+const numbersArray = getRandomNumbers(10);
+console.log(numbersArray);
+
+console.log('Only even numbers:');
+const evenNumbers = getEvenNumbers(numbersArray);
+console.log(evenNumbers);
+
+console.log('______________________________');
 
 /* ESERCIZIO 4 (forEach)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
+console.log('ESERCIZIO 4');
+
+function getTotalSum(arr) {
+  let mySum = 0;
+  arr.forEach(function (element) {
+    mySum += element;
+  });
+  return mySum;
+}
+
+console.log('Starter array:');
+console.log(numbersArray);
+
+console.log(`The total sum is: ${getTotalSum(numbersArray)}`);
+
+console.log('______________________________');
 
 /* ESERCIZIO 5 (reduce)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
+console.log('ESERCIZIO 5');
+
+function getTotalSumReduce(arr) {
+  const mySum = arr.reduce((sum, element) => sum + element, 0);
+  return mySum;
+}
+
+console.log('Starter array:');
+console.log(numbersArray);
+
+console.log(`The total sum is: ${getTotalSumReduce(numbersArray)}`);
+
+console.log('______________________________');
 
 /* ESERCIZIO 6 (map)
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
+console.log('ESERCIZIO 5');
+
+console.log('______________________________');
 
 /* ESERCIZIO 7 (map)
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
@@ -146,7 +223,7 @@ const movies = [
     Poster:
       'https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg',
   },
-]
+];
 
 /* ESERCIZIO 9 (forEach)
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
