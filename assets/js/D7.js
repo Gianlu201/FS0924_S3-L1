@@ -381,7 +381,17 @@ console.log('______________________________');
 console.log('ESERCIZIO 15');
 
 function getMovieFromYear(arr, year) {
-  const myMovie = arr.findIndex();
+  const index = arr.findIndex((element) => parseInt(element.Year) === year);
+  const myMovie = arr[index];
+  return myMovie;
 }
+
+let wantedYear = '2018';
+wantedYear = parseInt(wantedYear);
+
+const searchedMovie = getMovieFromYear(movies, wantedYear);
+
+console.log(`The movie came out in ${wantedYear} is ${searchedMovie.Title}`);
+console.log(searchedMovie);
 
 console.log('______________________________');
