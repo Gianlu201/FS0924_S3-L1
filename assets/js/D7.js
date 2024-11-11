@@ -96,7 +96,19 @@ console.log('______________________________');
 /* ESERCIZIO 6 (map)
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
-console.log('ESERCIZIO 5');
+console.log('ESERCIZIO 6');
+
+function incrementOf(arr, n) {
+  const myArr = arr.map((element) => (element += n));
+  return myArr;
+}
+
+console.log('Starter array:');
+console.log(numbersArray);
+
+let increment = 1;
+console.log(`Starter array incremented of ${increment}:`);
+console.log(incrementOf(numbersArray, increment));
 
 console.log('______________________________');
 
@@ -104,10 +116,40 @@ console.log('______________________________');
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
 */
+console.log('ESERCIZIO 7');
+
+function getLengthArray(arr) {
+  const myArr = arr.map((element) => element.length);
+  return myArr;
+}
+
+const stringArray = ['Pippo', 'Pluto', 'Paperino'];
+console.log('Starter array:');
+console.log(stringArray);
+
+console.log(getLengthArray(stringArray));
+
+console.log('______________________________');
 
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
 */
+console.log('ESERCIZIO 8');
+
+function getOddUnderHundred() {
+  const myArr = [];
+  for (let i = 1; i < 100; i++) {
+    if (i % 2 !== 0) {
+      myArr.push(i);
+    }
+  }
+  return myArr;
+}
+
+console.log('All odd numbers from 1 to 99:');
+console.log(getOddUnderHundred());
+
+console.log('______________________________');
 
 /* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
 const movies = [
@@ -228,14 +270,45 @@ const movies = [
 /* ESERCIZIO 9 (forEach)
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
 */
+console.log('ESERCIZIO 9');
+
+function getOlder(arr) {
+  let myMovie;
+  let myMovieYear = 2024;
+  arr.forEach((element) => {
+    if (parseInt(element.Year) < myMovieYear) {
+      myMovie = element;
+      myMovieYear = parseInt(element.Year);
+    }
+  });
+  return myMovie;
+}
+
+const olderMovie = getOlder(movies);
+console.log(`The oldest movie in the list is: ${olderMovie.Title}`);
+console.log(olderMovie);
+
+console.log('______________________________');
 
 /* ESERCIZIO 10
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */
+console.log('ESERCIZIO 10');
+
+function getTotalMovie(arr) {
+  return arr.length;
+}
+
+console.log(`In the movie list there are ${getTotalMovie(movies)} movies`);
+
+console.log('______________________________');
 
 /* ESERCIZIO 11 (map)
   Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
 */
+console.log('ESERCIZIO 11');
+
+console.log('______________________________');
 
 /* ESERCIZIO 12 (filter)
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
