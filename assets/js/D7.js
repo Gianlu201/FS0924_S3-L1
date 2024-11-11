@@ -341,12 +341,47 @@ console.log('______________________________');
 */
 console.log('ESERCIZIO 13');
 
+function getYears(arr) {
+  const myArr = arr.map((element) => parseInt(element.Year));
+  return myArr;
+}
+
+function getTotalYears(arr) {
+  const myArr = getYears(arr);
+  const mySum = myArr.reduce((sum, element) => sum + element);
+  return mySum;
+}
+
+const totalYears = getTotalYears(movies);
+console.log(`Total movies' years is: ${totalYears}`);
+
 console.log('______________________________');
 
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
+console.log('ESERCIZIO 14');
+
+function getMovieFromID(arr, id) {
+  const myMovie = arr.find((element) => element.imdbID === id);
+  return myMovie;
+}
+
+let wantedImdbID = 'tt0848228';
+let wantedMovie = getMovieFromID(movies, wantedImdbID);
+
+console.log(`The movie with imdbID: ${wantedImdbID} is: ${wantedMovie.Title}`);
+console.log(wantedMovie);
+
+console.log('______________________________');
 
 /* ESERCIZIO 15 (findIndex)
   Scrivi una funzione per ottenere dall'array fornito l'indice del primo film uscito nell'anno fornito come parametro.
 */
+console.log('ESERCIZIO 15');
+
+function getMovieFromYear(arr, year) {
+  const myMovie = arr.findIndex();
+}
+
+console.log('______________________________');
