@@ -308,15 +308,40 @@ console.log('______________________________');
 */
 console.log('ESERCIZIO 11');
 
+function getTitles(arr) {
+  const myArr = arr.map((element) => element.Title);
+  return myArr;
+}
+
+const moviesTitles = getTitles(movies);
+
+console.log(`Movies' titles are:`);
+console.log(moviesTitles);
+
 console.log('______________________________');
 
 /* ESERCIZIO 12 (filter)
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
 */
+console.log('ESERCIZIO 12');
+
+function millenialMovies(arr) {
+  const myArr = arr.filter((element) => parseInt(element.Year) > 2000);
+  return myArr;
+}
+
+const millenialMov = millenialMovies(movies);
+console.log('Millenial movies:');
+console.log(millenialMov);
+
+console.log('______________________________');
 
 /* ESERCIZIO 13 (reduce)
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
+console.log('ESERCIZIO 13');
+
+console.log('______________________________');
 
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
